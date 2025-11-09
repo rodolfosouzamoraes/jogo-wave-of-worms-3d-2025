@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ff04a53d5d0e8745bf8b6e1d2cd062b, type: 3}
-  m_Name: Quest_1
+  m_Script: {fileID: 11500000, guid: 8d6f074aafdf9404abd3e4455c839b82, type: 3}
+  m_Name: TEXT_Terminal
   m_EditorClassIdentifier: 
-  idQuest: 0
-  Quest: {fileID: 11400000, guid: 252f69ffee39ba24db787f87fd0b60f8, type: 2}
-  isDone: 0
+  txtLanguage:
+  - "C\xF3digo de Extra\xE7\xE3o"
+  - Extration Code

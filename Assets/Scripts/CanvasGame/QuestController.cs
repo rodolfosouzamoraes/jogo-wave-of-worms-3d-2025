@@ -7,13 +7,13 @@ public class QuestController : MonoBehaviour
     [SerializeField] TextMeshProUGUI txtQuest;
     [SerializeField] Quests[] mainQuests;
     private Quests currentQuest;
-    private int idLanguage;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        idLanguage = DBMng.GetIdLanguage();
+        
         currentQuest = mainQuests[0];
-        txtQuest.text = currentQuest.Quest.txtLanguage[idLanguage];
+        txtQuest.text = currentQuest.Quest.txtLanguage[CanvasGameManager.Instance.LanguageGame];
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class QuestController : MonoBehaviour
                 if (quest.isDone == false)
                 {
                     currentQuest = quest;
-                    txtQuest.text = currentQuest.Quest.txtLanguage[idLanguage];
+                    txtQuest.text = currentQuest.Quest.txtLanguage[CanvasGameManager.Instance.LanguageGame];
                     break;
                 }
             }

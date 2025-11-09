@@ -12,11 +12,20 @@ public class CanvasGameManager : MonoBehaviour
         {
             Quests = GetComponent<QuestController>();
             Interactions = GetComponent<InteractionsController>();
+            idLanguage = DBMng.GetIdLanguage();
             Instance = this;
             return;
         }
         Destroy(gameObject);
     }
+
+    private int idLanguage;
+
+    public int LanguageGame
+    {
+        get { return idLanguage; }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
