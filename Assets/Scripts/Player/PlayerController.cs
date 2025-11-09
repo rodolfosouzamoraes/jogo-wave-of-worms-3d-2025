@@ -134,5 +134,4 @@ public class PlayerController : MonoBehaviour
 
     public void AttackBasic(InputAction.CallbackContext context) { }
     public void AttackArea(InputAction.CallbackContext context) { }
-    public void Cure(InputAction.CallbackContext context) { }
 }
