@@ -14,6 +14,10 @@ public class QuestController : MonoBehaviour
         
         currentQuest = mainQuests[0];
         txtQuest.text = currentQuest.Quest.txtLanguage[CanvasGameManager.Instance.LanguageGame];
+        foreach(Quests s in mainQuests)
+        {
+            s.isDone = false;
+        }
     }
 
     // Update is called once per frame
