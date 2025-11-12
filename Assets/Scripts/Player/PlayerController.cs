@@ -30,8 +30,9 @@ public class PlayerController : MonoBehaviour
         _mainCamera = Camera.main;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        if (CarMng.CarController.EnableCar == true) return;
         ApplyMovement();
         ApplyGravity();
         ApplyRun();
