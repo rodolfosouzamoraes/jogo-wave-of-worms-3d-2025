@@ -13,6 +13,7 @@ public class CarMng: MonoBehaviour
         {
             CarController = GetComponent<SimpleCarController>();
             CarController.EnableCar = false;
+            driver.SetActive(false);
             Instance = this;
             return;
         }
@@ -20,6 +21,8 @@ public class CarMng: MonoBehaviour
     }
 
     [SerializeField] GameObject interactionCar;
+    [SerializeField] GameObject driver;
+    [SerializeField] Rigidbody rigidbody;
     private bool enableExitCar = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,7 +34,7 @@ public class CarMng: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log($"Velocity: {rigidbody.linearVelocity.magnitude}");
     }
 
     public void EnterCar()
@@ -42,6 +45,7 @@ public class CarMng: MonoBehaviour
         CameraManager.Instance.ChangeTarget(gameObject.transform);
         interactionCar.SetActive(false);
         enableExitCar = false;
+        driver.SetActive(true);
         StartCoroutine(EnableExitCar());
     }
 
@@ -51,6 +55,7 @@ public class CarMng: MonoBehaviour
         PlayerManager.Instance.gameObject.transform.SetParent(null);
         PlayerManager.Instance.gameObject.SetActive(true);
         CameraManager.Instance.ChangeTarget(PlayerManager.Instance.gameObject.transform);
+        driver.SetActive(false);
     }
 
     private IEnumerator EnableExitCar()
@@ -62,13 +67,13 @@ public class CarMng: MonoBehaviour
     public void ExitCar(InputAction.CallbackContext context)
     {
         Debug.Log("Entrei aqui 1");
-        if (context.performed && CarController.EnableCar == true && enableExitCar == true)
+        if (context.performed && CarController.EnableCar == true && enableExitCar == true && rigidbody.linearVelocity.magnitude <= 0.05f)
         {
             Debug.Log("Entrei aqui 2");
             ExitCar();
         }
 
-        if(context.canceled && CarController.EnableCar == false)
+        if(context.canceled && CarController.EnableCar == false )
         {
             Debug.Log("Entrei aqui 3");
             interactionCar.SetActive(true);
