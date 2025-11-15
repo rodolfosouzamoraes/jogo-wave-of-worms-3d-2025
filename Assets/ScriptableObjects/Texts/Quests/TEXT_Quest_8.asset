@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d6f074aafdf9404abd3e4455c839b82, type: 3}
-  m_Name: TEXT_Quest_5
+  m_Name: TEXT_Quest_8
   m_EditorClassIdentifier: 
   txtLanguage:
-  - "Encontre a pr\xF3xima area de extra\xE7\xE3o!"
-  - Find the next extraction area!
+  - "Complete a extra\xE7\xE3o!"
+  - Complete the extraction!

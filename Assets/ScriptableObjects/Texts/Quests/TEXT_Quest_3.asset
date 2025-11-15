@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TEXT_Quest_3
   m_EditorClassIdentifier: 
   txtLanguage:
-  - "Complete a Extra\xE7\xE3o!"
+  - "Complete a extra\xE7\xE3o!"
   - Complete the extraction!

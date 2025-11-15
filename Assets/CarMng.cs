@@ -3,13 +3,13 @@ using Unity.Cinemachine.Samples;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CarMng: MonoBehaviour
+public class CarMng : MonoBehaviour
 {
     public static CarMng Instance;
     public static SimpleCarController CarController;
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             CarController = GetComponent<SimpleCarController>();
             CarController.EnableCar = false;
@@ -23,7 +23,10 @@ public class CarMng: MonoBehaviour
     [SerializeField] GameObject interactionCar;
     [SerializeField] GameObject driver;
     [SerializeField] Rigidbody rigidbody;
-    [SerializeField] Quests questCar;
+    [SerializeField] MeshRenderer meshLamp;
+    [SerializeField] Material[] materialsLampOn;
+    [SerializeField] Material[] materialsLampOff;
+    [SerializeField] Quests[] questCar;
     private bool enableExitCar = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,9 +43,10 @@ public class CarMng: MonoBehaviour
 
     public void EnterCar()
     {
-        //Verificar se ao entrar ele completou a quest do carro
-        if (CanvasGameManager.Quests.IsCurrentQuests(questCar.idQuest))
-            CanvasGameManager.Quests.NextQuest(questCar.idQuest);
+        //Verificar se ao entrar ele completou a quest de entrar no carro
+        if (CanvasGameManager.Quests.IsCurrentQuests(questCar[0].idQuest)) {
+            CanvasGameManager.Quests.NextQuest(questCar[0].idQuest);
+        }            
 
         CarController.EnableCar = true;
         PlayerManager.Instance.gameObject.transform.SetParent(transform);
@@ -56,6 +60,12 @@ public class CarMng: MonoBehaviour
 
     public void ExitCar()
     {
+        //Verificar se ao entrar ele completou a quest de sair do carro
+        if (CanvasGameManager.Quests.IsCurrentQuests(questCar[1].idQuest))
+        {
+            CanvasGameManager.Quests.NextQuest(questCar[1].idQuest);
+        }
+
         CarController.EnableCar = false;
         PlayerManager.Instance.gameObject.transform.SetParent(null);
         PlayerManager.Instance.gameObject.SetActive(true);
@@ -79,6 +89,32 @@ public class CarMng: MonoBehaviour
         if(context.canceled && CarController.EnableCar == false )
         {
             interactionCar.SetActive(true);
+        }
+    }
+
+    public void ActiveLamp()
+    {
+        meshLamp.materials = materialsLampOn;
+    }
+
+    public void DesactiveLamp()
+    {
+        meshLamp.materials = materialsLampOff;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("ExtrationArea"))
+        {
+            ActiveLamp();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag.Equals("ExtrationArea"))
+        {
+            DesactiveLamp();
         }
     }
 

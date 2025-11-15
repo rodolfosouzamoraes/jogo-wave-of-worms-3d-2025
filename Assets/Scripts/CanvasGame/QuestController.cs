@@ -6,7 +6,7 @@ public class QuestController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI txtQuest;
     [SerializeField] Quests[] mainQuests;
-    private Quests currentQuest;
+    [SerializeField] private Quests currentQuest;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
