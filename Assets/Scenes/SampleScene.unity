@@ -436,6 +436,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 748642868}
     m_Modifications:
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 748642867}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExtrationAreaCurrent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExtrationMng, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 185793215}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3499370576535348827, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
       propertyPath: m_Name
       value: ExtrationArea 4
@@ -2711,6 +2743,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 748642868}
     m_Modifications:
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 748642867}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExtrationAreaCurrent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExtrationMng, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1486949142}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3499370576535348827, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
       propertyPath: m_Name
       value: ExtrationArea 5
@@ -2908,6 +2972,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 748642868}
     m_Modifications:
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 748642867}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExtrationAreaCurrent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExtrationMng, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1608317279}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3499370576535348827, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
       propertyPath: m_Name
       value: ExtrationArea 3
@@ -3292,6 +3388,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 748642868}
     m_Modifications:
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 748642867}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExtrationAreaCurrent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExtrationMng, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2029207203}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3499370576535348827, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
       propertyPath: m_Name
       value: ExtrationArea 2
@@ -3921,6 +4049,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 748642868}
     m_Modifications:
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 748642867}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetExtrationAreaCurrent
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ExtrationMng, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8591062324625019704}
+    - target: {fileID: 1788080463536418512, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
+      propertyPath: events.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3499370576535348827, guid: 32eb730525be7a94a8958f6e1b44d03e, type: 3}
       propertyPath: m_Name
       value: ExtrationArea 1

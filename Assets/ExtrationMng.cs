@@ -14,7 +14,7 @@ public class ExtrationMng : MonoBehaviour
         Destroy(gameObject);
     }
     [SerializeField] GameObject[] allExtrationArea;
-    private int extrationAreaCurrentIndex;
+    private GameObject extrationAreaCurrent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,9 +23,13 @@ public class ExtrationMng : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetExtrationAreaCurrent(GameObject area)
     {
-        
+        extrationAreaCurrent = area;
+    }
+
+    public Transform ExtrationAreaCurrent
+    {
+        get {  return extrationAreaCurrent.transform; }
     }
 }

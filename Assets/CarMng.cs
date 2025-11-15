@@ -22,6 +22,7 @@ public class CarMng : MonoBehaviour
 
     [SerializeField] GameObject interactionCar;
     [SerializeField] GameObject driver;
+    [SerializeField] GameObject antena;
     [SerializeField] Rigidbody rigidbody;
     [SerializeField] MeshRenderer meshLamp;
     [SerializeField] Material[] materialsLampOn;
@@ -38,7 +39,13 @@ public class CarMng : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        antena.transform.LookAt(
+            new Vector3(
+                ExtrationMng.Instance.ExtrationAreaCurrent.transform.position.x,
+                antena.transform.position.y,
+                ExtrationMng.Instance.ExtrationAreaCurrent.transform.position.z
+            )
+        );
     }
 
     public void EnterCar()

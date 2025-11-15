@@ -704,6 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionCar: {fileID: 8396287829666223453}
   driver: {fileID: 8061748033185790240}
+  antena: {fileID: 9151445676434793412}
   rigidbody: {fileID: 4087702720102686518}
   meshLamp: {fileID: 3711487754046766657}
   materialsLampOn:
