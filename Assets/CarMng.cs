@@ -23,6 +23,7 @@ public class CarMng: MonoBehaviour
     [SerializeField] GameObject interactionCar;
     [SerializeField] GameObject driver;
     [SerializeField] Rigidbody rigidbody;
+    [SerializeField] Quests questCar;
     private bool enableExitCar = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,11 +35,15 @@ public class CarMng: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"Velocity: {rigidbody.linearVelocity.magnitude}");
+
     }
 
     public void EnterCar()
     {
+        //Verificar se ao entrar ele completou a quest do carro
+        if (CanvasGameManager.Quests.IsCurrentQuests(questCar.idQuest))
+            CanvasGameManager.Quests.NextQuest(questCar.idQuest);
+
         CarController.EnableCar = true;
         PlayerManager.Instance.gameObject.transform.SetParent(transform);
         PlayerManager.Instance.gameObject.SetActive(false);
@@ -66,16 +71,13 @@ public class CarMng: MonoBehaviour
 
     public void ExitCar(InputAction.CallbackContext context)
     {
-        Debug.Log("Entrei aqui 1");
         if (context.performed && CarController.EnableCar == true && enableExitCar == true && rigidbody.linearVelocity.magnitude <= 0.05f)
         {
-            Debug.Log("Entrei aqui 2");
             ExitCar();
         }
 
         if(context.canceled && CarController.EnableCar == false )
         {
-            Debug.Log("Entrei aqui 3");
             interactionCar.SetActive(true);
         }
     }

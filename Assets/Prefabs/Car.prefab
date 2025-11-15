@@ -704,6 +704,7 @@ MonoBehaviour:
   interactionCar: {fileID: 8396287829666223453}
   driver: {fileID: 8061748033185790240}
   rigidbody: {fileID: 4087702720102686518}
+  questCar: {fileID: 11400000, guid: 1b86cd1091b061c4998e5e5004e1f52a, type: 2}
 --- !u!114 &3369650735685546437
 MonoBehaviour:
   m_ObjectHideFlags: 0

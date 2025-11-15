@@ -42,4 +42,9 @@ public class QuestController : MonoBehaviour
             }
         }        
     }
+
+    public bool IsCurrentQuests(int idQuest)
+    {
+        return currentQuest.idQuest == idQuest;
+    }
 }
