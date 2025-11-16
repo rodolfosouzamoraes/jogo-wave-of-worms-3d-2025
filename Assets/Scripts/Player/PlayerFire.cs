@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerFire : MonoBehaviour
 {
-    [SerializeField] GameObject gunBack;
+    [SerializeField] GameObject gunHands;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,11 +18,31 @@ public class PlayerFire : MonoBehaviour
 
     public void ActiveGunBack()
     {
-        gunBack.SetActive(true);
+        gunHands.SetActive(true);
+        PlayerManager.Animation.PlayIdleGun();
     }
 
     public void DesactiveGunBack()
     {
-        gunBack.SetActive(false);
+        gunHands.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        if (gunHands.activeSelf)
+        {
+            PlayerManager.Animation.PlayIdleGun();
+        }
+    }
+
+    public void AttackBasic(InputAction.CallbackContext context) {
+
+        if (gunHands.activeSelf == true && context.performed)
+        {
+            PlayerManager.Animation.PlayFireGun();
+        }
+        else{ 
+            PlayerManager.Animation.CanceledFireGun();
+        }
     }
 }

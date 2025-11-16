@@ -133,6 +133,6 @@ public class PlayerController : MonoBehaviour
             isRun = false;
     }
 
-    public void AttackBasic(InputAction.CallbackContext context) { }
+    
     public void AttackArea(InputAction.CallbackContext context) { }
 }

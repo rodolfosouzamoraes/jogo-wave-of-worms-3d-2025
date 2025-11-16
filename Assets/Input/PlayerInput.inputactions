@@ -289,7 +289,7 @@
                 {
                     "name": "",
                     "id": "e4b8dd05-5425-4641-8f08-511c8439e040",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -301,17 +301,6 @@
                     "name": "",
                     "id": "6ee007ce-f45a-47ab-a9ec-66f5e7864ea3",
                     "path": "<XInputController>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttackBasic",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7d036c53-2632-4a6d-bdf2-cc37cda86586",
-                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

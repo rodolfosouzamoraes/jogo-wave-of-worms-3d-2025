@@ -29,4 +29,19 @@ public class PlayerAnimation : MonoBehaviour
         _animator.SetBool("Run", true);
         _animator.SetBool("Walk", false);
     }
+
+    public void PlayIdleGun()
+    {
+        _animator.SetFloat("idleGun", 1);
+    }
+
+    public void PlayFireGun()
+    {
+        _animator.SetBool("IsFire", true );
+    }
+
+    public void CanceledFireGun()
+    {
+        _animator.SetBool("IsFire",false);
+    }
 }
