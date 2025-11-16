@@ -30,6 +30,11 @@ public class CarMng : MonoBehaviour
     [SerializeField] Quests[] questCar;
     private bool enableExitCar = false;
 
+    public Rigidbody Rigidbody
+    {
+        get { return rigidbody; }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

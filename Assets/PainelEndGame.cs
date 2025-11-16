@@ -10,9 +10,9 @@ public class PainelEndGame : MonoBehaviour
     [SerializeField] TextMeshProUGUI txtTotalFluids;
     [SerializeField] TextMeshProUGUI txtTotalKm;
     private float secondsInGame;
-    private float totalWormsKilled;
-    private float totalFluids;
-    private float totalKm;
+    [SerializeField] private float totalWormsKilled;
+    [SerializeField] private float totalFluids;
+    [SerializeField] private float totalKm;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,14 +24,14 @@ public class PainelEndGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log($"{Math.Round(totalKm / 1000, 2)}Km");
     }
 
     public void ShowEndGame()
     {
         CalculateTime();
         txtWormsKilled.text = $"{totalWormsKilled}";
-        txtTotalKm.text = $"{totalKm}Km";
+        txtTotalKm.text = $"{Math.Round(totalKm/1000,2)}Km";
         txtTotalFluids.text = $"{totalFluids}";
         pnlEndGame.SetActive(true);
     }
