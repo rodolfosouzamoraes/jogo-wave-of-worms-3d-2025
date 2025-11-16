@@ -7,6 +7,7 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
+        _animator.SetBool("isEnableGun", false);
     }
 
     public void PlayIdle()
@@ -33,6 +34,7 @@ public class PlayerAnimation : MonoBehaviour
     public void PlayIdleGun()
     {
         _animator.SetFloat("idleGun", 1);
+        _animator.SetBool("isEnableGun", true);
     }
 
     public void PlayFireGun()
