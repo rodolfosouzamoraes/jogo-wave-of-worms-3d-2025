@@ -33,7 +33,7 @@ public class PlayerAnimation : MonoBehaviour
 
     public void PlayIdleGun()
     {
-        _animator.SetFloat("idleGun", 1);
+        _animator?.SetFloat("idleGun", 1);
         _animator.SetBool("isEnableGun", true);
     }
 

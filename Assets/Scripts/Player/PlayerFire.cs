@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerFire : MonoBehaviour
 {
     [SerializeField] GameObject gunHands;
+    [SerializeField] GameObject projetilTarget;
+    [SerializeField] GameObject projetil;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +45,23 @@ public class PlayerFire : MonoBehaviour
         }
         else{ 
             PlayerManager.Animation.CanceledFireGun();
+        }
+    }
+
+    public void InstantiateProjetil()
+    {
+        int axesY = -60;
+        for(int i = 0; i < 6; i++)
+        {
+            GameObject newProjetil = Instantiate(projetil);
+            newProjetil.transform.eulerAngles = new Vector3(
+                    projetilTarget.transform.eulerAngles.x,
+                    projetilTarget.transform.eulerAngles.y + axesY,
+                    projetilTarget.transform.eulerAngles.z
+            );
+            newProjetil.transform.position = projetilTarget.transform.position;
+            newProjetil.transform.SetParent(null);
+            axesY += 20;
         }
     }
 }
