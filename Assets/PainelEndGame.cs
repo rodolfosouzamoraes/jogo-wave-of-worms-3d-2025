@@ -28,7 +28,7 @@ public class PainelEndGame : MonoBehaviour
     {
         CalculateTime();
         txtWormsKilled.text = $"{totalWormsKilled}";
-        txtTotalKm.text = $"{Math.Round(CarMng.Instance.TotalKm/1000,2)}Km";
+        txtTotalKm.text = $"{Math.Round(CarMng.Instance.TotalKm/100,2)}Km";
         txtTotalFluids.text = $"{Math.Round(CarMng.Instance.TotalFluids,2)}L";
         pnlEndGame.SetActive(true);
     }
