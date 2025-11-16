@@ -5,6 +5,7 @@ public class CanvasGameManager : MonoBehaviour
     public static CanvasGameManager Instance;
     public static QuestController Quests;
     public static InteractionsController Interactions;
+    public static PainelEndGame EndGame;
 
     private void Awake()
     {
@@ -13,6 +14,7 @@ public class CanvasGameManager : MonoBehaviour
             Quests = GetComponent<QuestController>();
             Interactions = GetComponent<InteractionsController>();
             idLanguage = DBMng.GetIdLanguage();
+            EndGame = GetComponent<PainelEndGame>();
             Instance = this;
             return;
         }
