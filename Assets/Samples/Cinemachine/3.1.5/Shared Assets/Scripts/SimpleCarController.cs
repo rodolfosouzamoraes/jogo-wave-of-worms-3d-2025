@@ -85,7 +85,7 @@ namespace Unity.Cinemachine.Samples
 
             //Calcular KM
             if (CarMng.Instance.Rigidbody.linearVelocity.magnitude >= 0.05f)
-                CanvasGameManager.EndGame.IncrementKM(CarMng.Instance.Rigidbody.linearVelocity.magnitude * Time.deltaTime);
+                CarMng.Instance.IncrementKM(CarMng.Instance.Rigidbody.linearVelocity.magnitude * Time.deltaTime);
         }
 
         void UpdateWheel(WheelCollider c, Transform t)

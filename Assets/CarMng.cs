@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using TMPro;
 using Unity.Cinemachine.Samples;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -28,6 +30,9 @@ public class CarMng : MonoBehaviour
     [SerializeField] Material[] materialsLampOn;
     [SerializeField] Material[] materialsLampOff;
     [SerializeField] Quests[] questCar;
+    [SerializeField] TextMeshProUGUI txtFluids;
+    private float totalFluids;
+    private float totalKm;
     private bool enableExitCar = false;
 
     public Rigidbody Rigidbody
@@ -35,10 +40,22 @@ public class CarMng : MonoBehaviour
         get { return rigidbody; }
     }
 
+    public float TotalFluids
+    {
+        get { return totalFluids; }
+    }
+
+    public float TotalKm
+    {
+        get { return totalKm; }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        totalFluids = 0;
+        totalKm = 0;
+        txtFluids.text = $"{Math.Round(totalFluids, 2)}L";
     }
 
     // Update is called once per frame
@@ -129,5 +146,14 @@ public class CarMng : MonoBehaviour
             DesactiveLamp();
         }
     }
+    public void IncrementFluids(float value)
+    {
+        totalFluids += value;
+        txtFluids.text = $"{Math.Round(totalFluids, 2)}L";
+    }
 
+    public void IncrementKM(float value)
+    {
+        totalKm += value;
+    }
 }

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1742446246920533191}
   - component: {fileID: 6489971393096421678}
   - component: {fileID: 6088167476305644884}
+  - component: {fileID: 2732636128982971493}
+  - component: {fileID: 4243546246634445747}
   m_Layer: 0
   m_Name: Fluid
   m_TagString: Untagged
@@ -86,6 +88,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2732636128982971493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314611524273107309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d729715b98cf7284a985d606f728fbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wormFluid: {fileID: 5388162292291892053}
+  particleFluid: {fileID: 8979913533398486427}
+--- !u!65 &4243546246634445747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314611524273107309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 23.104881, z: 1}
+  m_Center: {x: 0, y: 11.052441, z: 0}
 --- !u!1 &3477708090746166825
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,8 +5051,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4085095437636257403}
-  - component: {fileID: 6886045200652655068}
-  - component: {fileID: 9064312962558077505}
   m_Layer: 0
   m_Name: WormFluid
   m_TagString: Untagged
@@ -5040,41 +5075,6 @@ Transform:
   - {fileID: 6275143144042368170}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6886045200652655068
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5388162292291892053}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9064312962558077505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5388162292291892053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d729715b98cf7284a985d606f728fbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fluid: {fileID: 314611524273107309}
-  particleFluid: {fileID: 8979913533398486427}
 --- !u!1 &8979913533398486427
 GameObject:
   m_ObjectHideFlags: 0

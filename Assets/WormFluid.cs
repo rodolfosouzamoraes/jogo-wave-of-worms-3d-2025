@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WormFluid : MonoBehaviour
 {
-    [SerializeField] GameObject fluid;
+    [SerializeField] GameObject wormFluid;
     [SerializeField] GameObject particleFluid;
     private bool isCollectFluid;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,11 +18,11 @@ public class WormFluid : MonoBehaviour
     {
         if(isCollectFluid == true)
         {
-            fluid.transform.localScale -= new Vector3(0.85f * Time.deltaTime, 0.85f * Time.deltaTime, 0.85f * Time.deltaTime);
+            transform.localScale -= new Vector3(0.85f * Time.deltaTime, 0.85f * Time.deltaTime, 0.85f * Time.deltaTime);
             
-            CanvasGameManager.EndGame.IncrementFluids(0.85f * Time.deltaTime);
-            if (fluid.transform.localScale.y <= 0) { 
-                Destroy(gameObject);            
+            CarMng.Instance.IncrementFluids((0.85f * Time.deltaTime)/100);
+            if (transform.localScale.y <= 0.1f) { 
+                Destroy(wormFluid);            
             }
         }        
     }
