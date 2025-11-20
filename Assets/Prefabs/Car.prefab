@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4410600548185917008}
   - component: {fileID: 4534995566533780734}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pickup_Truck_02_Wheel_FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4127660213211099619}
   - component: {fileID: 8989589626714139408}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pickup_Truck_02_Wheel_RR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6383945665155194729}
   - component: {fileID: 5579503463895645440}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pickup_Truck_02_Wheel_FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,7 +892,7 @@ GameObject:
   - component: {fileID: 3544825723226918962}
   - component: {fileID: 3369650735685546437}
   - component: {fileID: 3864349346284458960}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Car
   m_TagString: Car
   m_Icon: {fileID: 0}
@@ -1418,7 +1418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3088956361097182852}
   - component: {fileID: 567748079327891871}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pickup_Truck_02_Wheel_RL
   m_TagString: Untagged
   m_Icon: {fileID: 0}

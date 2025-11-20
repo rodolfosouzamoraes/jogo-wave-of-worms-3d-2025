@@ -6,6 +6,7 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] GameObject gunHands;
     [SerializeField] GameObject projetilTarget;
     [SerializeField] GameObject projetil;
+    [SerializeField] float projetilDamage;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,6 +60,7 @@ public class PlayerFire : MonoBehaviour
                     projetilTarget.transform.eulerAngles.y + axesY,
                     projetilTarget.transform.eulerAngles.z
             );
+            newProjetil.GetComponent<ProjetilController>().SetProjetilDamage(projetilDamage);
             newProjetil.transform.position = projetilTarget.transform.position;
             newProjetil.transform.SetParent(null);
             axesY += 20;

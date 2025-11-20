@@ -5,26 +5,37 @@ public class WormFluid : MonoBehaviour
     [SerializeField] GameObject wormFluid;
     [SerializeField] GameObject particleFluid;
     private bool isCollectFluid;
+    private bool isFluidsDone;
+    private float maxScale;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         int sizeFluid = new System.Random().Next(1, 4);
-        transform.localScale *= sizeFluid;
+        maxScale = sizeFluid;
+        transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         particleFluid.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isCollectFluid == true)
+        if (isCollectFluid == true)
         {
             transform.localScale -= new Vector3(0.85f * Time.deltaTime, 0.85f * Time.deltaTime, 0.85f * Time.deltaTime);
-            
-            CarMng.Instance.IncrementFluids((0.85f * Time.deltaTime)/100);
-            if (transform.localScale.y <= 0.1f) { 
-                Destroy(wormFluid);            
+
+            CarMng.Instance.IncrementFluids((0.85f * Time.deltaTime) / 100);
+            if (transform.localScale.y <= 0.1f)
+            {
+                Destroy(wormFluid);
             }
-        }        
+        }
+        else if (isFluidsDone == false && isCollectFluid == false) {
+            transform.localScale += new Vector3(0.85f * Time.deltaTime, 0.85f * Time.deltaTime, 0.85f * Time.deltaTime);
+            if(transform.localScale.x>= maxScale)
+            {
+                isFluidsDone = true;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)

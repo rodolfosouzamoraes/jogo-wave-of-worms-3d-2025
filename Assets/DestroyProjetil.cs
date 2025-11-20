@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class DestroyProjetil : MonoBehaviour
 {
@@ -22,6 +21,15 @@ public class DestroyProjetil : MonoBehaviour
         particle.transform.localScale = Vector3.one;
         particle.Stop();
         Destroy(particle.gameObject,3f);
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        particle.transform.SetParent(null);
+        particle.transform.localScale = Vector3.one;
+        particle.Stop();
+        Destroy(particle.gameObject, 3f);
         Destroy(gameObject);
     }
 }
