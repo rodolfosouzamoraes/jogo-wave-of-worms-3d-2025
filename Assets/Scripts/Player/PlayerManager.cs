@@ -27,6 +27,11 @@ public class PlayerManager : MonoBehaviour
         get { return fluidPackage; }
     }
 
+    public Vector3 GetPosition
+    {
+        get { return transform.position; }
+    }
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -3828,6 +3828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2970502398653086285}
   - component: {fileID: 6786126665097617358}
+  - component: {fileID: 3361050262168963842}
   m_Layer: 0
   m_Name: TerminalRadio
   m_TagString: Untagged
@@ -3891,6 +3892,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  terminalActived: 0
+  terminalFinished: 0
+--- !u!114 &3361050262168963842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7703416816028315459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a390e7d63294c21428238b6638cb4b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2911210358306666117, guid: 7f186d66ddc8ed042b0ade8fb18830b6, type: 3}
+  terminalRadio: {fileID: 6786126665097617358}
+  timerWaitSpawn: 1
+  maxEnemys: 100
 --- !u!1 &8024266568081376386
 GameObject:
   m_ObjectHideFlags: 0

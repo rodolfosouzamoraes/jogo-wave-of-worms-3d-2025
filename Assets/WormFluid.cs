@@ -30,7 +30,7 @@ public class WormFluid : MonoBehaviour
             }
         }
         else if (isFluidsDone == false && isCollectFluid == false) {
-            transform.localScale += new Vector3(0.85f * Time.deltaTime, 0.85f * Time.deltaTime, 0.85f * Time.deltaTime);
+            transform.localScale += new Vector3(0.95f * Time.deltaTime, 0.95f * Time.deltaTime, 0.95f * Time.deltaTime);
             if(transform.localScale.x>= maxScale)
             {
                 isFluidsDone = true;

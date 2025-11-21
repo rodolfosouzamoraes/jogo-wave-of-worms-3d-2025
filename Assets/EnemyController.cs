@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
@@ -8,7 +9,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float rayDistance = 10f;
     [SerializeField] Scrollbar lifeBarEnemy;
     [SerializeField] LayerMask layerMask;
-    [SerializeField] Transform targetLook;
+    [SerializeField] float maxDistancePlayer;
+    private NavMeshAgent agentIA;
     private Vector3 pointCollision;
     private float lifeEnemyMax;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,10 +18,11 @@ public class EnemyController : MonoBehaviour
     {
         lifeEnemyMax = lifeEnemy;
         lifeBarEnemy.size = 1;
+        agentIA = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         // Desenha o raio na Scene View (ajuda a depurar)
         Debug.DrawRay(transform.position, Vector3.down * rayDistance, Color.red);
@@ -38,6 +41,12 @@ public class EnemyController : MonoBehaviour
                 transform.position.z -1.368f
             )
         ); // -1.461, 0.611,-1.368
+
+        float calculateDistanceToPlayer = Vector3.Distance(transform.position, PlayerManager.Instance.GetPosition);
+        if(calculateDistanceToPlayer > maxDistancePlayer)
+            agentIA.destination = PlayerManager.Instance.gameObject.transform.position;
+        else
+            agentIA.destination = transform.position;
     }
 
     private void OnCollisionEnter(Collision collision)

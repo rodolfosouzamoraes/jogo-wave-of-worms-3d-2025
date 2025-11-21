@@ -17,9 +17,19 @@ public class TerminalRadio : MonoBehaviour
     [SerializeField] int maxCountExtrationCode;
     [SerializeField] GameObject extrationCode;
     public UnityEvent eventFinishedRadio;
-    private bool terminalActived = false;
-    private bool terminalFinished = false;
+    [SerializeField] private bool terminalActived = false;
+    [SerializeField] private bool terminalFinished = false;
     private int countExtrationCode = 0;
+
+    public bool TerminalFinished
+    {
+        get { return terminalFinished; }
+    }
+
+    public bool TerminalActived
+    {
+        get { return terminalActived; }
+    }
 
     private void Start()
     {
