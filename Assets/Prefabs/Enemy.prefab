@@ -189,7 +189,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -214,7 +214,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  maxDistancePlayer: 1.5
+  maxDistancePlayer: 1
+  valueDamagePlayer: 10
 --- !u!195 &6068486008509443103
 NavMeshAgent:
   m_ObjectHideFlags: 0

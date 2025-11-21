@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Scrollbar lifeBarEnemy;
     [SerializeField] LayerMask layerMask;
     [SerializeField] float maxDistancePlayer;
+    [SerializeField] float valueDamagePlayer;
     private NavMeshAgent agentIA;
     private Vector3 pointCollision;
     private float lifeEnemyMax;
@@ -44,9 +45,14 @@ public class EnemyController : MonoBehaviour
 
         float calculateDistanceToPlayer = Vector3.Distance(transform.position, PlayerManager.Instance.GetPosition);
         if(calculateDistanceToPlayer > maxDistancePlayer)
+        {
             agentIA.destination = PlayerManager.Instance.gameObject.transform.position;
+        }
         else
+        {
             agentIA.destination = transform.position;
+            PlayerManager.Damage.DecrementLife(valueDamagePlayer);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -55,6 +61,16 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag.Equals("Projetil"))
         {
             float damage = collision.gameObject.GetComponent<ProjetilController>().GetProjetilDamage();
+            DamageEnemy(damage);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"Colidiu: {other.gameObject.tag}");
+        if (other.gameObject.tag.Equals("Projetil"))
+        {
+            float damage = other.gameObject.GetComponent<ProjetilController>().GetProjetilDamage();
             DamageEnemy(damage);
         }
     }

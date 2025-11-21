@@ -5,6 +5,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance;
     public static PlayerController Controller;
     public static PlayerAnimation Animation;
+    public static PlayerDamage Damage;
     public static PlayerFire Fire;
 
     private void Awake()
@@ -14,6 +15,7 @@ public class PlayerManager : MonoBehaviour
             Controller = GetComponent<PlayerController>();
             Animation = GetComponent<PlayerAnimation>();
             Fire = GetComponent<PlayerFire>();
+            Damage = GetComponent<PlayerDamage>();
             Instance = this;
             return;
         }

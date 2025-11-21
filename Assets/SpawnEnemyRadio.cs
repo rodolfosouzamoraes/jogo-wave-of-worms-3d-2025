@@ -8,7 +8,6 @@ public class SpawnEnemyRadio : MonoBehaviour
     [SerializeField] int maxEnemys;
     private float nextSpawn;
     private int countEnemy = 0;
-    private bool isSpawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,12 +19,7 @@ public class SpawnEnemyRadio : MonoBehaviour
     {
         if (terminalRadio.TerminalFinished == true) return;
 
-        if (terminalRadio.TerminalActived == true && isSpawn == false)
-        {
-            isSpawn = true;
-        }
-
-        if (Time.timeSinceLevelLoad > nextSpawn && isSpawn == true && countEnemy < maxEnemys) {
+        if (Time.timeSinceLevelLoad > nextSpawn && terminalRadio.TerminalActived == true && countEnemy < maxEnemys) {
             nextSpawn = Time.timeSinceLevelLoad + timerWaitSpawn;
 
             float distanceToPlayerX = new System.Random().Next(5, 15) * (new System.Random().Next(0, 2) == 0 ? -1 : 1);

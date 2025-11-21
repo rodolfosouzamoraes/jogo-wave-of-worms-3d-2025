@@ -3815,6 +3815,7 @@ GameObject:
   - component: {fileID: 1270899720}
   - component: {fileID: 1270899722}
   - component: {fileID: 1270899724}
+  - component: {fileID: 1270899725}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -3998,6 +3999,19 @@ MonoBehaviour:
   projetilTarget: {fileID: 1274295837}
   projetil: {fileID: 7682433025725419067, guid: 768b6b86dd710974b8b13f1d6bc52328, type: 3}
   projetilDamage: 25
+--- !u!114 &1270899725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270899715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526c2e3254d7fd74cb249355dcbdd12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 250
 --- !u!1 &1274295837
 GameObject:
   m_ObjectHideFlags: 0
