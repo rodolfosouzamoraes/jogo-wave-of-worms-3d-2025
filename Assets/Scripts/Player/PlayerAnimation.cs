@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    [SerializeField] RigBuilder rigBuilder;
     private Animator _animator;
+    private bool deathPlayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,5 +49,14 @@ public class PlayerAnimation : MonoBehaviour
     public void CanceledFireGun()
     {
         _animator.SetBool("IsFire",false);
+    }
+
+    public void PlayDeathPlayer()
+    {
+        if (deathPlayer == true) return;
+        deathPlayer = true;
+        rigBuilder.enabled = false;
+        _animator.SetLayerWeight(1, 0f);
+        _animator.SetTrigger("Death");
     }
 }

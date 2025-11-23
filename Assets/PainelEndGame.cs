@@ -11,6 +11,12 @@ public class PainelEndGame : MonoBehaviour
     [SerializeField] TextMeshProUGUI txtTotalKm;
     private float secondsInGame;
     [SerializeField] private float totalWormsKilled;
+    private bool isEndGame;
+
+    public bool IsEndGame
+    {
+        get { return isEndGame; }
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +32,7 @@ public class PainelEndGame : MonoBehaviour
 
     public void ShowEndGame()
     {
+        isEndGame = true;
         CalculateTime();
         txtWormsKilled.text = $"{totalWormsKilled}";
         txtTotalKm.text = $"{Math.Round(CarMng.Instance.TotalKm/100,2)}Km";
@@ -54,5 +61,10 @@ public class PainelEndGame : MonoBehaviour
     public void IncrementWormsKilled()
     {
         totalWormsKilled++;
-    }    
+    }
+    
+    public void GameOver()
+    {
+        isEndGame = true;
+    }
 }

@@ -300,7 +300,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 418abb8c3ef16044ca111e688215708f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1274295838}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 418abb8c3ef16044ca111e688215708f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1548793010}
   m_SourcePrefab: {fileID: 100100000, guid: 418abb8c3ef16044ca111e688215708f, type: 3}
 --- !u!4 &43542824 stripped
 Transform:
@@ -3260,21 +3263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab7534ba9b9cfa4f8fe749539164952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventAnimation:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1270899724}
-        m_TargetAssemblyTypeName: PlayerFire, Assembly-CSharp
-        m_MethodName: InstantiateProjetil
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &916501563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3343,6 +3331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aba8ec3d0dd47640959f91089af0a64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1013940964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5746098018151000326, guid: 1a6fcb9fec338bc4187e523ffa7b9456, type: 3}
+  m_PrefabInstance: {fileID: 869993418}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1029595247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7868984390681930107, guid: 06d0d51ebeeda8a4fbaf73dfaebd858d, type: 3}
@@ -4052,6 +4045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba43b8ac18fdd843b907b7e72e15dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigBuilder: {fileID: 884151572}
 --- !u!114 &1270899723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4096,8 +4090,10 @@ MonoBehaviour:
   life: 250
   backpack: {fileID: 1521574040}
   backpackRender: {fileID: 855073785}
-  maxEmissionIntensity: 8
-  minEmissionIntensity: 0
+  emissiveIntensity: 8
+  body: {fileID: 884151569}
+  rifle: {fileID: 1548793010}
+  hat: {fileID: 1013940964}
 --- !u!1 &1274295837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5094,6 +5090,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 418abb8c3ef16044ca111e688215708f, type: 3}
   m_PrefabInstance: {fileID: 43542823}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1548793010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548793009}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.07952114, y: 0.23079963, z: 0.8808898}
+  m_Center: {x: 0.00209582, y: 0.002001786, z: 0.059554555}
 --- !u!1001 &1608317278
 PrefabInstance:
   m_ObjectHideFlags: 0

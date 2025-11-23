@@ -3,10 +3,14 @@ using UnityEngine.Events;
 
 public class SupportAninamtionPlayer : MonoBehaviour
 {
-    public UnityEvent eventAnimation;
 
-    public void ActiveEvent()
+    public void EventInstantiateProjetil()
     {
-        eventAnimation.Invoke();
+        PlayerManager.Fire.InstantiateProjetil();
+    }
+
+    public void EventSinkTheSand()
+    {
+        PlayerManager.Damage.SinkInTheSand();
     }
 }

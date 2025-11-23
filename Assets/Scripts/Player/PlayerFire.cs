@@ -39,7 +39,7 @@ public class PlayerFire : MonoBehaviour
     }
 
     public void AttackBasic(InputAction.CallbackContext context) {
-
+        if (CanvasGameManager.EndGame.IsEndGame == true) return;
         if (gunHands.activeSelf == true && context.performed)
         {
             PlayerManager.Animation.PlayFireGun();
