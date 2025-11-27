@@ -26,7 +26,8 @@ public class PlayerDamage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CanvasGameManager.EndGame.IsEndGame == true) return;
+        if (CanvasGameManager.EndGame.IsEndGame == true || 
+            CanvasGameManager.Instance.isGamePaused == true) return;
         UpdateBackpackColor();
     }
 

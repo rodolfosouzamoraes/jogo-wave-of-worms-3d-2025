@@ -25,34 +25,41 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Desenha o raio na Scene View (ajuda a depurar)
-        Debug.DrawRay(transform.position, Vector3.down * rayDistance, Color.red);
-
-        // Cria o Raycast
-        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, rayDistance, layerMask))
+        if (CanvasGameManager.Instance.isGamePaused == true)
         {
-            // Ponto exato de colisão
-            pointCollision = hit.point;
-        }
-
-        lifeBarEnemy.gameObject.transform.LookAt(
-            new Vector3(
-                transform.position.x - 1.461f,
-                transform.position.y + 0.611f,
-                transform.position.z -1.368f
-            )
-        ); // -1.461, 0.611,-1.368
-
-        float calculateDistanceToPlayer = Vector3.Distance(transform.position, PlayerManager.Instance.GetPosition);
-        if(calculateDistanceToPlayer > maxDistancePlayer)
-        {
-            agentIA.destination = PlayerManager.Instance.gameObject.transform.position;
+            agentIA.destination = transform.position;
         }
         else
         {
-            agentIA.destination = transform.position;
-            PlayerManager.Damage.DecrementLife(valueDamagePlayer);
-        }
+            // Desenha o raio na Scene View (ajuda a depurar)
+            Debug.DrawRay(transform.position, Vector3.down * rayDistance, Color.red);
+
+            // Cria o Raycast
+            if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, rayDistance, layerMask))
+            {
+                // Ponto exato de colisão
+                pointCollision = hit.point;
+            }
+
+            lifeBarEnemy.gameObject.transform.LookAt(
+                new Vector3(
+                    transform.position.x - 1.461f,
+                    transform.position.y + 0.611f,
+                    transform.position.z - 1.368f
+                )
+            ); // -1.461, 0.611,-1.368
+
+            float calculateDistanceToPlayer = Vector3.Distance(transform.position, PlayerManager.Instance.GetPosition);
+            if (calculateDistanceToPlayer > maxDistancePlayer)
+            {
+                agentIA.destination = PlayerManager.Instance.gameObject.transform.position;
+            }
+            else
+            {
+                agentIA.destination = transform.position;
+                PlayerManager.Damage.DecrementLife(valueDamagePlayer);
+            }
+        }            
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -32,8 +32,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (CanvasGameManager.EndGame.IsEndGame == true) return;
-        if (CarMng.CarController.EnableCar == true) return;
+        if (
+            CanvasGameManager.EndGame.IsEndGame == true || 
+            CarMng.CarController.EnableCar == true ||
+            CanvasGameManager.Instance.isGamePaused == true
+        ) return;
+
         ApplyMovement();
         ApplyGravity();
         ApplyRun();

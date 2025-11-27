@@ -61,6 +61,11 @@ public class CarMng : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CanvasGameManager.Instance.isGamePaused == true)
+        {
+            rigidbody.linearVelocity = Vector3.zero;
+            return;
+        }
         antena.transform.LookAt(
             new Vector3(
                 ExtrationMng.Instance.ExtrationAreaCurrent.transform.position.x,

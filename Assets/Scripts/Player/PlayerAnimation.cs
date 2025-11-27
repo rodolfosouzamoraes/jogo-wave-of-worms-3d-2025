@@ -59,4 +59,12 @@ public class PlayerAnimation : MonoBehaviour
         _animator.SetLayerWeight(1, 0f);
         _animator.SetTrigger("Death");
     }
+
+    private void Update()
+    {
+        if (CanvasGameManager.Instance.isGamePaused == true)
+            _animator.speed = 0;
+        else
+            _animator.speed = 1;
+    }
 }

@@ -57,7 +57,7 @@ namespace Unity.Cinemachine.Samples
 
         void FixedUpdate()
         {
-            if(enableCar == false) return;
+            if(enableCar == false || CanvasGameManager.Instance.isGamePaused == true) return;
             // Acceleration
             var force = MotorStrength * MoveZ.Value;
             FrontLeftWheelCollider.motorTorque = force;
