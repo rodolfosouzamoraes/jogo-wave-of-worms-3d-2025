@@ -5,6 +5,12 @@ public class ExtrationArea : MonoBehaviour
 {
     public UnityEvent eventAreaOn;
     public UnityEvent eventAreaOff;
+    [SerializeField] GameObject extrationPoint;
+
+    public GameObject GetExtrationPoint()
+    {
+        return extrationPoint;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("Car"))

@@ -270,6 +270,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  extrationPoint: {fileID: 3331526996374835011}
 --- !u!1001 &116305122221756083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -607,6 +608,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06d0d51ebeeda8a4fbaf73dfaebd858d, type: 3}
+--- !u!1 &3331526996374835011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7868984390681930107, guid: 06d0d51ebeeda8a4fbaf73dfaebd858d, type: 3}
+  m_PrefabInstance: {fileID: 4832302728027530808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6557752369935341018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1733350064899994594, guid: 06d0d51ebeeda8a4fbaf73dfaebd858d, type: 3}

@@ -18,9 +18,10 @@ public class ExtrationMng : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach (GameObject area in allExtrationArea) { 
-            area.SetActive(false);
+        for (int i = 1; i< allExtrationArea.Length; i++) {
+            allExtrationArea[i].SetActive(false);
         }
+        SetExtrationAreaCurrent(allExtrationArea[0]);
     }
 
     public void SetExtrationAreaCurrent(GameObject area)
@@ -30,6 +31,6 @@ public class ExtrationMng : MonoBehaviour
 
     public Transform ExtrationAreaCurrent
     {
-        get {  return extrationAreaCurrent.transform; }
+        get {  return extrationAreaCurrent.GetComponentInChildren<ExtrationArea>().GetExtrationPoint().transform; }
     }
 }
