@@ -62,9 +62,9 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
-        if (CanvasGameManager.Instance.isGamePaused == true)
+        /*if (CanvasGameManager.Instance.isGamePaused == true)
             _animator.speed = 0;
         else
-            _animator.speed = 1;
+            _animator.speed = 1;*/
     }
 }

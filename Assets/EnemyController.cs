@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] float maxDistancePlayer;
     [SerializeField] float valueDamagePlayer;
+    [SerializeField] GameObject vfxFluids;
     private NavMeshAgent agentIA;
     private Vector3 pointCollision;
     private float lifeEnemyMax;
@@ -90,6 +91,9 @@ public class EnemyController : MonoBehaviour
             lifeEnemy = 0;
             GameObject newFluids = Instantiate(fluids);
             newFluids.transform.position = pointCollision;
+            GameObject newVFX = Instantiate(vfxFluids);
+            newVFX.transform.position = transform.position;
+            newVFX.transform.localScale *= 2;
             Destroy(gameObject);
         }
         lifeBarEnemy.size = lifeEnemy/lifeEnemyMax;
