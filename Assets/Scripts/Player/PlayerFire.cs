@@ -52,6 +52,7 @@ public class PlayerFire : MonoBehaviour
     public void InstantiateProjetil()
     {
         int axesY = -60;
+        int axesX = -60;
         for(int i = 0; i < 6; i++)
         {
             GameObject newProjetil = Instantiate(projetil);
@@ -64,6 +65,20 @@ public class PlayerFire : MonoBehaviour
             newProjetil.transform.position = projetilTarget.transform.position;
             newProjetil.transform.SetParent(null);
             axesY += 20;
+        }
+
+        for (int i = 0; i < 6; i++)
+        {
+            GameObject newProjetil = Instantiate(projetil);
+            newProjetil.transform.eulerAngles = new Vector3(
+                    projetilTarget.transform.eulerAngles.x + axesX,
+                    projetilTarget.transform.eulerAngles.y,
+                    projetilTarget.transform.eulerAngles.z
+            );
+            newProjetil.GetComponent<ProjetilController>().SetProjetilDamage(projetilDamage);
+            newProjetil.transform.position = projetilTarget.transform.position;
+            newProjetil.transform.SetParent(null);
+            axesX += 20;
         }
     }
 }

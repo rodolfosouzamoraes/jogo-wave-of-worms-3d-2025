@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SpawnEnemyRadio : MonoBehaviour
 {
@@ -22,15 +24,33 @@ public class SpawnEnemyRadio : MonoBehaviour
         if (Time.timeSinceLevelLoad > nextSpawn && terminalRadio.TerminalActived == true && countEnemy < maxEnemys) {
             nextSpawn = Time.timeSinceLevelLoad + timerWaitSpawn;
 
-            float distanceToPlayerX = new System.Random().Next(5, 15) * (new System.Random().Next(0, 2) == 0 ? -1 : 1);
-            float distanceToPlayerZ = new System.Random().Next(5, 15) * (new System.Random().Next(0, 2) == 0 ? -1 : 1);
+            float distanceX = new System.Random().Next(3, 10);
+            float distanceZ = new System.Random().Next(3, 10);
+
+            float positionZ = Random.Range(
+                PlayerManager.Instance.GetPosition.z - distanceZ,
+                PlayerManager.Instance.GetPosition.z + distanceZ
+            );
+
+            float positionX = Random.Range(
+                PlayerManager.Instance.GetPosition.x - distanceX,
+                PlayerManager.Instance.GetPosition.x + distanceX
+            );
+
+            NavMeshHit positionNavMesh;
+            NavMesh.SamplePosition(
+                new Vector3(positionX, 0, positionZ),
+                out positionNavMesh,
+                Mathf.Infinity,
+                1
+            );
 
             GameObject newEnemy = Instantiate(enemy);
-            newEnemy.transform.position = new Vector3(
-                PlayerManager.Instance.GetPosition.x + distanceToPlayerX,
-                newEnemy.transform.position.y,
-                PlayerManager.Instance.GetPosition.z + distanceToPlayerZ
-            );
+
+            NavMeshAgent agent = newEnemy.GetComponent<NavMeshAgent>();
+            agent.enabled = false; 
+            newEnemy.transform.position = positionNavMesh.position;
+            agent.enabled = true;
 
             countEnemy++;
         }

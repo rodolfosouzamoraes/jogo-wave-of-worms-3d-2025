@@ -66,8 +66,8 @@ public class TerminalRadio : MonoBehaviour
     public void EnableTerminalRadio()
     {
         radio.SetActive(true);
-        iconQuest.SetActive(true);
         iconQuest.SetActive(false);
+        iconTerminal.SetActive(true);
         Invoke("ActiveTerminal", 1f);
     }
 
