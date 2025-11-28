@@ -28,13 +28,13 @@ public class SpawnEnemyRadio : MonoBehaviour
             float distanceZ = new System.Random().Next(3, 10);
 
             float positionZ = Random.Range(
-                PlayerManager.Instance.GetPosition.z - distanceZ,
-                PlayerManager.Instance.GetPosition.z + distanceZ
+                terminalRadio.transform.position.z - distanceZ,
+                terminalRadio.transform.position.z + distanceZ
             );
 
             float positionX = Random.Range(
-                PlayerManager.Instance.GetPosition.x - distanceX,
-                PlayerManager.Instance.GetPosition.x + distanceX
+                terminalRadio.transform.position.x - distanceX,
+                terminalRadio.transform.position.x + distanceX
             );
 
             NavMeshHit positionNavMesh;
