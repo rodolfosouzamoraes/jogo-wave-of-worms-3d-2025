@@ -25,6 +25,7 @@ public class CanvasGameManager : MonoBehaviour
         Destroy(gameObject);
     }
     [SerializeField] GameObject[] mainPainels;
+    [SerializeField] GameObject map;
     private int idLanguage;
     public bool isGamePaused;
 
@@ -71,6 +72,15 @@ public class CanvasGameManager : MonoBehaviour
             {
                 ActivePainelGame();
             }
+        }
+    }
+
+    public void Map(InputAction.CallbackContext context)
+    {
+        if (EndGame.IsEndGame == true || isGamePaused == true) return;
+        if (context.performed == true)
+        {
+            map.SetActive(!map.activeSelf);
         }
     }
 

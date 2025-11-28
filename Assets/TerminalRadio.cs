@@ -19,6 +19,8 @@ public class TerminalRadio : MonoBehaviour
     public UnityEvent eventFinishedRadio;
     [SerializeField] private bool terminalActived = false;
     [SerializeField] private bool terminalFinished = false;
+    [SerializeField] GameObject iconQuest;
+    [SerializeField] GameObject iconTerminal;
     private int countExtrationCode = 0;
 
     public bool TerminalFinished
@@ -64,6 +66,8 @@ public class TerminalRadio : MonoBehaviour
     public void EnableTerminalRadio()
     {
         radio.SetActive(true);
+        iconQuest.SetActive(true);
+        iconQuest.SetActive(false);
         Invoke("ActiveTerminal", 1f);
     }
 
