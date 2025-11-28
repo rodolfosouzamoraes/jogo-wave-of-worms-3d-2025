@@ -114,6 +114,7 @@ public class InteractionsController : MonoBehaviour
     /// <param name="code"></param>
     private void CheckCode(int code)
     {
+        AudioMng.Instance.PlayAudioClickUI();
         if (countingHitsCode == listCodeExtration.Count) return;
         var item = listCodeExtration[countingHitsCode].GetComponent<ItemExtrationCode>();
         if (item.Code == code)

@@ -80,5 +80,7 @@ public class PlayerFire : MonoBehaviour
             newProjetil.transform.SetParent(null);
             axesX += 20;
         }
+
+        AudioMng.Instance.PlayAudioGun();
     }
 }

@@ -13,4 +13,9 @@ public class SupportAninamtionPlayer : MonoBehaviour
     {
         PlayerManager.Damage.SinkInTheSand();
     }
+
+    public void AudioStepsSand()
+    {
+        AudioMng.Instance.PlayAudioStepsSand();
+    }
 }

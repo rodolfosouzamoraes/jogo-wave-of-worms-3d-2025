@@ -94,6 +94,7 @@ public class EnemyController : MonoBehaviour
             GameObject newVFX = Instantiate(vfxFluids);
             newVFX.transform.position = transform.position;
             newVFX.transform.localScale *= 2;
+            AudioMng.Instance.PlayAudioDeathEnemy();
             Destroy(gameObject);
         }
         lifeBarEnemy.size = lifeEnemy/lifeEnemyMax;

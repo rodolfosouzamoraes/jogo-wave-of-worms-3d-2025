@@ -68,12 +68,15 @@ public class TerminalRadio : MonoBehaviour
         radio.SetActive(true);
         iconQuest.SetActive(false);
         iconTerminal.SetActive(true);
+        AudioMng.Instance.PlayAudioTerminal();
         Invoke("ActiveTerminal", 1f);
     }
 
     public void ActiveTerminal()
     {
         if (terminalFinished == true) return;
+
+        AudioMng.Instance.PlayAudioExtrationPoint();
 
         ResetTerminal();
 
@@ -97,6 +100,7 @@ public class TerminalRadio : MonoBehaviour
         txtProgress.text = $"{TXTFinished.txtLanguage[CanvasGameManager.Instance.LanguageGame]}";
         txtPercent.gameObject.SetActive(false);
         progressBar.gameObject.SetActive(false);
+        AudioMng.Instance.PlayAudioAmbient();
         eventFinishedRadio.Invoke();
     }
 }
