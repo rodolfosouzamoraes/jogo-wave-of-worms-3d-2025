@@ -5,6 +5,7 @@ using UnityEngine;
 public class PainelEndGame : MonoBehaviour
 {
     [SerializeField] GameObject pnlEndGame;
+    [SerializeField] GameObject pnlGameOver;
     [SerializeField] TextMeshProUGUI txtTimer;
     [SerializeField] TextMeshProUGUI txtWormsKilled;
     [SerializeField] TextMeshProUGUI txtTotalFluids;
@@ -66,5 +67,12 @@ public class PainelEndGame : MonoBehaviour
     public void GameOver()
     {
         isEndGame = true;
+        pnlGameOver.SetActive(true);
+        Invoke("RestartGame", 5f);
+    }
+
+    private void RestartGame()
+    {
+        CanvasGameManager.Instance.RestartGame();
     }
 }

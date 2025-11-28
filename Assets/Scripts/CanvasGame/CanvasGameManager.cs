@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CanvasGameManager : MonoBehaviour
 {
@@ -71,5 +72,10 @@ public class CanvasGameManager : MonoBehaviour
                 ActivePainelGame();
             }
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
