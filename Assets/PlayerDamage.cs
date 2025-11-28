@@ -52,7 +52,17 @@ public class PlayerDamage : MonoBehaviour
             rifle.gameObject.AddComponent<Rigidbody>();
             CanvasGameManager.EndGame.GameOver();
         }
-    }   
+    } 
+    
+    public void IncrementLife(float value)
+    {
+        if (CanvasGameManager.EndGame.IsEndGame == true) return;
+        life += value * Time.deltaTime;
+        if(life> maxLife)
+        {
+            life = maxLife;
+        }
+    }
 
     public void ActiveBackpack()
     {

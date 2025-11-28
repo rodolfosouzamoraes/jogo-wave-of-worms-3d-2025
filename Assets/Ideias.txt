@@ -1,8 +1,9 @@
 * O fluido do inimigo se demorar muito para pegar ele deve sumir
-* Montar o mapa do deserto
+// * Montar o mapa do deserto
 // * colocar VFX para o ponto de extração
-* Fazer a tela de gameover
+// * Fazer a tela de gameover
 * Fazer a tela de tutorial
 * fazer a tela de configurações
 * Inserir os audios no jogo
 * Criar o mapa do jogo com os pontos de interesse
+// * Local para recuperar vida
