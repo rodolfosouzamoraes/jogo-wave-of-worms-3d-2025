@@ -61,7 +61,6 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"Colidiu: {other.gameObject.tag}");
         if (other.gameObject.tag.Equals("Projetil"))
         {
             float damage = other.gameObject.GetComponent<ProjetilController>().GetProjetilDamage();

@@ -7,6 +7,8 @@ TagManager:
   - Car
   - ExtrationArea
   - Projetil
+  - FxTemporaire
+  - Enemy
   layers:
   - Default
   - TransparentFX
