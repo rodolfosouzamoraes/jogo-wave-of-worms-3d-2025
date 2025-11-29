@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -7,7 +6,6 @@ public class PlayerAnimation : MonoBehaviour
     [SerializeField] RigBuilder rigBuilder;
     private Animator _animator;
     private bool deathPlayer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -58,13 +56,5 @@ public class PlayerAnimation : MonoBehaviour
         rigBuilder.enabled = false;
         _animator.SetLayerWeight(1, 0f);
         _animator.SetTrigger("Death");
-    }
-
-    private void Update()
-    {
-        /*if (CanvasGameManager.Instance.isGamePaused == true)
-            _animator.speed = 0;
-        else
-            _animator.speed = 1;*/
     }
 }

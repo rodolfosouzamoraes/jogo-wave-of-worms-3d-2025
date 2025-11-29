@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,13 +9,11 @@ public class SpawnEnemyRadio : MonoBehaviour
     [SerializeField] int maxEnemys;
     private float nextSpawn;
     private int countEnemy = 0;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         nextSpawn = Time.timeSinceLevelLoad + timerWaitSpawn;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (terminalRadio.TerminalFinished == true) return;

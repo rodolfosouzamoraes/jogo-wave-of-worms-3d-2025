@@ -1,9 +1,7 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class SupportAninamtionPlayer : MonoBehaviour
 {
-
     public void EventInstantiateProjetil()
     {
         PlayerManager.Fire.InstantiateProjetil();

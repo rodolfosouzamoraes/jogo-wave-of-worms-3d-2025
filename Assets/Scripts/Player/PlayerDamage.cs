@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerDamage : MonoBehaviour
 {
@@ -14,7 +13,6 @@ public class PlayerDamage : MonoBehaviour
 
 
     private float maxLife;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         maxLife = life;
@@ -23,7 +21,6 @@ public class PlayerDamage : MonoBehaviour
         materialLife.EnableKeyword("_EMISSION");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (CanvasGameManager.EndGame.IsEndGame == true || 

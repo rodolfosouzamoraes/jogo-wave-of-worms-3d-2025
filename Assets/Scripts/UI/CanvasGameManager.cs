@@ -27,7 +27,6 @@ public class CanvasGameManager : MonoBehaviour
     [SerializeField] GameObject map;
     public bool isGamePaused;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ActivePainelMenu();
@@ -46,15 +45,10 @@ public class CanvasGameManager : MonoBehaviour
         mainPainels[0].SetActive(false);
         isGamePaused = false;
     }
-    
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void PauseGame(InputAction.CallbackContext context) {
+        if (EndGame.IsEndGame == true) return;
 
-    public void PauseGame(InputAction.CallbackContext context) { 
         if (context.performed == true)
         {
             if(isGamePaused == false)
@@ -80,5 +74,14 @@ public class CanvasGameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void RestartGameInput(InputAction.CallbackContext context)
+    {
+        if (EndGame.IsEndGame == false) return;
+        if (context.performed == true)
+        {
+            RestartGame();
+        }
     }
 }

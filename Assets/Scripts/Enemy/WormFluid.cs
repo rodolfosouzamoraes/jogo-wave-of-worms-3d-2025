@@ -7,7 +7,6 @@ public class WormFluid : MonoBehaviour
     private bool isCollectFluid;
     private bool isFluidsDone;
     private float maxScale;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         int sizeFluid = new System.Random().Next(1, 4);
@@ -16,7 +15,6 @@ public class WormFluid : MonoBehaviour
         particleFluid.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isCollectFluid == true)

@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent agentIA;
     private Vector3 pointCollision;
     private float lifeEnemyMax;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         lifeEnemyMax = lifeEnemy;
@@ -23,7 +23,6 @@ public class EnemyController : MonoBehaviour
         agentIA = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (CanvasGameManager.Instance.isGamePaused == true)
@@ -32,13 +31,10 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            // Desenha o raio na Scene View (ajuda a depurar)
             Debug.DrawRay(transform.position, Vector3.down * rayDistance, Color.red);
 
-            // Cria o Raycast
             if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, rayDistance, layerMask))
             {
-                // Ponto exato de colisão
                 pointCollision = hit.point;
             }
 
@@ -48,7 +44,7 @@ public class EnemyController : MonoBehaviour
                     transform.position.y + 0.611f,
                     transform.position.z - 1.368f
                 )
-            ); // -1.461, 0.611,-1.368
+            );
 
             float calculateDistanceToPlayer = Vector3.Distance(transform.position, PlayerManager.Instance.GetPosition);
             if (calculateDistanceToPlayer > maxDistancePlayer)
@@ -61,16 +57,6 @@ public class EnemyController : MonoBehaviour
                 PlayerManager.Damage.DecrementLife(valueDamagePlayer);
             }
         }            
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log($"Colidiu: {collision.gameObject.tag}");
-        if (collision.gameObject.tag.Equals("Projetil"))
-        {
-            float damage = collision.gameObject.GetComponent<ProjetilController>().GetProjetilDamage();
-            DamageEnemy(damage);
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -95,6 +81,7 @@ public class EnemyController : MonoBehaviour
             newVFX.transform.position = transform.position;
             newVFX.transform.localScale *= 2;
             AudioMng.Instance.PlayAudioDeathEnemy();
+            CanvasGameManager.EndGame.IncrementWormsKilled();
             Destroy(gameObject);
         }
         lifeBarEnemy.size = lifeEnemy/lifeEnemyMax;

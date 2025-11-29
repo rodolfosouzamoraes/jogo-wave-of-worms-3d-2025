@@ -19,16 +19,9 @@ public class PainelEndGame : MonoBehaviour
         get { return isEndGame; }
     }
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         totalWormsKilled = 0;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ShowEndGame()
@@ -49,12 +42,10 @@ public class PainelEndGame : MonoBehaviour
 
         if (time.TotalHours >= 1)
         {
-            // Mostra horas, minutos e segundos
             txtTimer.text = time.ToString(@"hh\:mm\:ss");
         }
         else
         {
-            // Mostra apenas minutos e segundos
             txtTimer.text = time.ToString(@"mm\:ss");
         }
     }

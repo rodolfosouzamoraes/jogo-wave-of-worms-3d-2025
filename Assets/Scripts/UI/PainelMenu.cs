@@ -1,10 +1,9 @@
 using UnityEngine;
-using static Unity.VisualScripting.Icons;
 
 public class PainelMenu : MonoBehaviour
 {
     [SerializeField] GameObject[] selectLanguage;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         int idLanguage = DBMng.GetIdLanguage();

@@ -7,16 +7,10 @@ public class ExtrationPoint : MonoBehaviour
     private List<int> extrationCode; // 0 - CIMA, 1 - Direita, 2 - Baixo, 3 - Esquerda
     [SerializeField] UnityEvent eventsExtrationCode;
     [SerializeField] GameObject interactionKey;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         extrationCode = new List<int>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     /// <summary>

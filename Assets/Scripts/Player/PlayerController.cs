@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
     {
         if (_input.sqrMagnitude > 0.01f)
         {
-            // Direção de entrada em relação à câmera
             Vector3 camForward = _mainCamera.transform.forward;
             Vector3 camRight = _mainCamera.transform.right;
             camForward.y = 0;
@@ -69,7 +68,6 @@ public class PlayerController : MonoBehaviour
 
             _moveDir = (camForward * _input.y + camRight * _input.x).normalized;
 
-            // Calcula o ângulo alvo e suaviza a rotação
             float targetAngle = Mathf.Atan2(_moveDir.x, _moveDir.z) * Mathf.Rad2Deg;
             float smoothAngle = Mathf.SmoothDampAngle(
                 transform.eulerAngles.y,
@@ -82,17 +80,14 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Nenhuma entrada → parar o movimento horizontal
             _moveDir = Vector3.zero;
         }
 
-        // Movimento final (horizontal + gravidade)
         Vector3 move = _moveDir * speed * speedRun * Time.deltaTime;
         move.y = _velocityY * Time.deltaTime;
 
         _characterController.Move(move);
 
-        // Ativa a animação de movimentação ou parado
         if (_input.sqrMagnitude < 0.01f)
         {
             PlayerManager.Animation.PlayIdle();
@@ -137,7 +132,4 @@ public class PlayerController : MonoBehaviour
         if (context.canceled)
             isRun = false;
     }
-
-    
-    public void AttackArea(InputAction.CallbackContext context) { }
 }

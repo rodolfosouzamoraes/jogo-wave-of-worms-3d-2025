@@ -4,13 +4,7 @@ public class RecoverPlayerLife : MonoBehaviour
 {
     [SerializeField] float valueRecover;
     bool isAreaColision;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if(isAreaColision == true)

@@ -7,7 +7,6 @@ public class QuestController : MonoBehaviour
     [SerializeField] Quests[] mainQuests;
     [SerializeField] private Quests currentQuest;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
@@ -19,7 +18,6 @@ public class QuestController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         txtQuest.text = currentQuest.Quest.txtLanguage[DBMng.GetIdLanguage()];
@@ -35,7 +33,6 @@ public class QuestController : MonoBehaviour
                 if (quest.isDone == false)
                 {
                     currentQuest = quest;
-                    //txtQuest.text = currentQuest.Quest.txtLanguage[DBMng.GetIdLanguage()];
                     break;
                 }
             }

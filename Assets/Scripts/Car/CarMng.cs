@@ -50,7 +50,6 @@ public class CarMng : MonoBehaviour
         get { return totalKm; }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         totalFluids = 0;
@@ -58,7 +57,6 @@ public class CarMng : MonoBehaviour
         txtFluids.text = $"{Math.Round(totalFluids, 2)}L";
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (CanvasGameManager.Instance.isGamePaused == true)

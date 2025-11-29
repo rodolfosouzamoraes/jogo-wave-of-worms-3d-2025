@@ -7,16 +7,10 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] GameObject projetilTarget;
     [SerializeField] GameObject projetil;
     [SerializeField] float projetilDamage;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         DesactiveGunBack();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ActiveGunBack()
@@ -55,29 +49,26 @@ public class PlayerFire : MonoBehaviour
         int axesX = -60;
         for(int i = 0; i < 6; i++)
         {
-            GameObject newProjetil = Instantiate(projetil);
-            newProjetil.transform.eulerAngles = new Vector3(
+            GameObject newProjetilHorizontal = Instantiate(projetil);
+            newProjetilHorizontal.transform.eulerAngles = new Vector3(
                     projetilTarget.transform.eulerAngles.x,
                     projetilTarget.transform.eulerAngles.y + axesY,
                     projetilTarget.transform.eulerAngles.z
             );
-            newProjetil.GetComponent<ProjetilController>().SetProjetilDamage(projetilDamage);
-            newProjetil.transform.position = projetilTarget.transform.position;
-            newProjetil.transform.SetParent(null);
+            newProjetilHorizontal.GetComponent<ProjetilController>().SetProjetilDamage(projetilDamage);
+            newProjetilHorizontal.transform.position = projetilTarget.transform.position;
+            newProjetilHorizontal.transform.SetParent(null);
             axesY += 20;
-        }
 
-        for (int i = 0; i < 6; i++)
-        {
-            GameObject newProjetil = Instantiate(projetil);
-            newProjetil.transform.eulerAngles = new Vector3(
+            GameObject newProjetilVertical = Instantiate(projetil);
+            newProjetilVertical.transform.eulerAngles = new Vector3(
                     projetilTarget.transform.eulerAngles.x + axesX,
                     projetilTarget.transform.eulerAngles.y,
                     projetilTarget.transform.eulerAngles.z
             );
-            newProjetil.GetComponent<ProjetilController>().SetProjetilDamage(projetilDamage);
-            newProjetil.transform.position = projetilTarget.transform.position;
-            newProjetil.transform.SetParent(null);
+            newProjetilVertical.GetComponent<ProjetilController>().SetProjetilDamage(projetilDamage);
+            newProjetilVertical.transform.position = projetilTarget.transform.position;
+            newProjetilVertical.transform.SetParent(null);
             axesX += 20;
         }
 

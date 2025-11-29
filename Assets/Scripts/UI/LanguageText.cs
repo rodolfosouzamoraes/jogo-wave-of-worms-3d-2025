@@ -12,10 +12,4 @@ public class LanguageText : MonoBehaviour
         int idLanguage = DBMng.GetIdLanguage();
         textMeshPro.text = text.txtLanguage[idLanguage];
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

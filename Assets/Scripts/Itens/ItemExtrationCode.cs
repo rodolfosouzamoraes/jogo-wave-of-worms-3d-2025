@@ -12,7 +12,7 @@ public class ItemExtrationCode : MonoBehaviour
     {
         get { return code; }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         DesactiveCode();

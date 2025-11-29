@@ -20,14 +20,7 @@ public class AudioMng : MonoBehaviour
     private bool isChangeMusic;
     private bool isLowVolumeMusic;
     private AudioClip currentClipMusic;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (isChangeMusic == false) return;
@@ -41,7 +34,7 @@ public class AudioMng : MonoBehaviour
                 audioMusic.Play();
             }
         }
-        else if (audioMusic.volume < 1 && isLowVolumeMusic == false)
+        else if (audioMusic.volume < 0.5 && isLowVolumeMusic == false)
         {
             audioMusic.volume += 1 * Time.deltaTime;
             if (audioMusic.volume >=1)
