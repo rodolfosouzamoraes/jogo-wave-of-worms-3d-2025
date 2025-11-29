@@ -11,6 +11,11 @@ public static class DBMng
         {
             save = new Save();
             save.IdLanguage = 0;
+            save.wormsKilled = 0;
+            save.timeGame = 0;
+            save.fluidsL = 0;
+            save.carKm = 0;
+            save.totalGameplay = 0;
             SaveGame(save);
         }
         return save;
@@ -26,6 +31,17 @@ public static class DBMng
     {
         Save save = GetSave();
         save.IdLanguage = id;
+        SaveGame(save);
+    }
+
+    public static void SaveEndGame(int wormsKilled, float km, float fluidsL, float timeGame)
+    {
+        Save save = GetSave();
+        save.totalGameplay++;
+        save.wormsKilled = wormsKilled;
+        save.timeGame += timeGame;
+        save.fluidsL += fluidsL;
+        save.carKm += km;
         SaveGame(save);
     }
 

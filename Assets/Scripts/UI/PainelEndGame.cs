@@ -11,7 +11,7 @@ public class PainelEndGame : MonoBehaviour
     [SerializeField] TextMeshProUGUI txtTotalFluids;
     [SerializeField] TextMeshProUGUI txtTotalKm;
     private float secondsInGame;
-    [SerializeField] private float totalWormsKilled;
+    [SerializeField] private int totalWormsKilled;
     private bool isEndGame;
 
     public bool IsEndGame
@@ -27,27 +27,35 @@ public class PainelEndGame : MonoBehaviour
     public void ShowEndGame()
     {
         isEndGame = true;
-        CalculateTime();
-        txtWormsKilled.text = $"{totalWormsKilled}";
-        txtTotalKm.text = $"{Math.Round(CarMng.Instance.TotalKm/100,2)}Km";
-        txtTotalFluids.text = $"{Math.Round(CarMng.Instance.TotalFluids,2)}L";
+        CalculateEndGame();        
         pnlEndGame.SetActive(true);
     }
 
-    private void CalculateTime()
+    private void CalculateEndGame()
     {
+        Save save = DBMng.GetSave();
+        float km = (float)Math.Round(CarMng.Instance.TotalKm / 100, 2);
+        float fluids = (float)Math.Round(CarMng.Instance.TotalFluids, 2);
+        txtWormsKilled.text = $"{totalWormsKilled} / <color=#00FF00>{save.wormsKilled}</color>";
+        txtTotalKm.text = $"{km}Km / <color=#00FF00>{save.carKm}</color>";
+        txtTotalFluids.text = $"{Math.Round(CarMng.Instance.TotalFluids, 2)}L / <color=#00FF00>{save.fluidsL}</color>";
+
         secondsInGame = Time.timeSinceLevelLoad;
 
         TimeSpan time = TimeSpan.FromSeconds(secondsInGame);
+        TimeSpan timeSave = TimeSpan.FromSeconds(save.timeGame);
 
         if (time.TotalHours >= 1)
         {
-            txtTimer.text = time.ToString(@"hh\:mm\:ss");
+            txtTimer.text = $"{time.ToString(@"hh\:mm\:ss")} / <color=#00FF00>{timeSave.ToString(@"hh\:mm\:ss")}</color>";
         }
         else
         {
-            txtTimer.text = time.ToString(@"mm\:ss");
+            txtTimer.text = $"{time.ToString(@"mm\:ss")} / <color=#00FF00>{timeSave.ToString(@"hh\:mm\:ss")}</color>";
         }
+
+        DBMng.SaveEndGame(totalWormsKilled, km, fluids, secondsInGame);
+
     }
 
     public void IncrementWormsKilled()
