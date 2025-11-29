@@ -16,7 +16,6 @@ public class CanvasGameManager : MonoBehaviour
         {
             Quests = GetComponent<QuestController>();
             Interactions = GetComponent<InteractionsController>();
-            idLanguage = DBMng.GetIdLanguage();
             EndGame = GetComponent<PainelEndGame>();
             Menu = GetComponent<PainelMenu>();
             Instance = this;
@@ -26,13 +25,7 @@ public class CanvasGameManager : MonoBehaviour
     }
     [SerializeField] GameObject[] mainPainels;
     [SerializeField] GameObject map;
-    private int idLanguage;
     public bool isGamePaused;
-
-    public int LanguageGame
-    {
-        get { return idLanguage; }
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

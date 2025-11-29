@@ -11,7 +11,7 @@ public class TextUISettings : MonoBehaviour
         SetText();
     }
 
-    private void SetText()
+    public void SetText()
     {
         txtUI = GetComponent<TextMeshProUGUI>();
         txtUI.text = $"{language.txtLanguage[DBMng.GetIdLanguage()]}";

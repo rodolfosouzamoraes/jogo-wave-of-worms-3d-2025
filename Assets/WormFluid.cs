@@ -43,6 +43,7 @@ public class WormFluid : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             isCollectFluid = true;
+            isFluidsDone = true;
             particleFluid.SetActive(true);
         }
     }

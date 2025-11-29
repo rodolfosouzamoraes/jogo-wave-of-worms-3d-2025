@@ -12,7 +12,7 @@ public class QuestController : MonoBehaviour
     {
         
         currentQuest = mainQuests[0];
-        txtQuest.text = currentQuest.Quest.txtLanguage[CanvasGameManager.Instance.LanguageGame];
+        txtQuest.text = currentQuest.Quest.txtLanguage[DBMng.GetIdLanguage()];
         foreach(Quests s in mainQuests)
         {
             s.isDone = false;
@@ -22,7 +22,7 @@ public class QuestController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        txtQuest.text = currentQuest.Quest.txtLanguage[DBMng.GetIdLanguage()];
     }
 
     public void NextQuest(int questIdDone)
@@ -35,7 +35,7 @@ public class QuestController : MonoBehaviour
                 if (quest.isDone == false)
                 {
                     currentQuest = quest;
-                    txtQuest.text = currentQuest.Quest.txtLanguage[CanvasGameManager.Instance.LanguageGame];
+                    //txtQuest.text = currentQuest.Quest.txtLanguage[DBMng.GetIdLanguage()];
                     break;
                 }
             }

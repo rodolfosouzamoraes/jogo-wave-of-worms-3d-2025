@@ -48,7 +48,7 @@ public class TerminalRadio : MonoBehaviour
     {
         progressBar.size = 0;
         txtPercent.text = $"{progressBar.size * 100}&";
-        txtProgress.text = $"{TXTLoading.txtLanguage[CanvasGameManager.Instance.LanguageGame]}";
+        txtProgress.text = $"{TXTLoading.txtLanguage[DBMng.GetIdLanguage()]}";
     }
     
     private void LoadingTerminal()
@@ -58,7 +58,7 @@ public class TerminalRadio : MonoBehaviour
         {
             progressBar.size = 1;
             terminalActived = false;
-            txtProgress.text = $"{TXTExtrationCode.txtLanguage[CanvasGameManager.Instance.LanguageGame]}";
+            txtProgress.text = $"{TXTExtrationCode.txtLanguage[DBMng.GetIdLanguage()]}";
             extrationCode.SetActive(true);
         }
     }
@@ -97,7 +97,7 @@ public class TerminalRadio : MonoBehaviour
     private void FinishedTerminal()
     {
         terminalFinished = true;
-        txtProgress.text = $"{TXTFinished.txtLanguage[CanvasGameManager.Instance.LanguageGame]}";
+        txtProgress.text = $"{TXTFinished.txtLanguage[DBMng.GetIdLanguage()]}";
         txtPercent.gameObject.SetActive(false);
         progressBar.gameObject.SetActive(false);
         AudioMng.Instance.PlayAudioAmbient();

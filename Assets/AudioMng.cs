@@ -16,6 +16,10 @@ public class AudioMng : MonoBehaviour
     [SerializeField] AudioSource audioMusic;
     [SerializeField] AudioSource audioVFX;
     [SerializeField] AudioClip[] clips;
+
+    private bool isChangeMusic;
+    private bool isLowVolumeMusic;
+    private AudioClip currentClipMusic;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,27 +30,40 @@ public class AudioMng : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isChangeMusic == false) return;
+        if(audioMusic.volume > 0 && isLowVolumeMusic == true)
+        {
+            audioMusic.volume -= 1 * Time.deltaTime;
+            if (audioMusic.volume <= 0) {
+                isLowVolumeMusic = false;
+                audioMusic.Stop();
+                audioMusic.clip = currentClipMusic;
+                audioMusic.Play();
+            }
+        }
+        else if (audioMusic.volume < 1 && isLowVolumeMusic == false)
+        {
+            audioMusic.volume += 1 * Time.deltaTime;
+            if (audioMusic.volume >=1)
+            {
+                isLowVolumeMusic = true;
+                isChangeMusic = false;
+            }
+        }
     }
 
     public void PlayAudioAmbient()
     {
-        if (audioMusic.clip != clips[0])
-        {
-            audioMusic.Stop();
-            audioMusic.clip = clips[0];
-            audioMusic.Play();
-        }
+        isChangeMusic = true;
+        isLowVolumeMusic = true;
+        currentClipMusic = clips[0];
     }
 
     public void PlayAudioTerminal()
     {
-        if (audioMusic.clip != clips[1])
-        {
-            audioMusic.Stop();
-            audioMusic.clip = clips[1];
-            audioMusic.Play();
-        }
+        isChangeMusic = true;
+        isLowVolumeMusic = true;
+        currentClipMusic = clips[1];
     }
 
     public void PlayAudioStepsSand()
