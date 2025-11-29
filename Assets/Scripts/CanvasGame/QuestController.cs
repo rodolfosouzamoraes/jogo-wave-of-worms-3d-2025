@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using static Unity.VisualScripting.Icons;
 
 public class QuestController : MonoBehaviour
 {

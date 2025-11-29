@@ -18,7 +18,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &19361691590901780
 Transform:
@@ -134,10 +134,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasIcon
       objectReference: {fileID: 0}
+    - target: {fileID: 4237407361418888690, guid: 0b3c676be4c538044bfea8aaa133257e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5831885555366850420, guid: 0b3c676be4c538044bfea8aaa133257e, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 940fedb7b5bdac4409a7d4ab0f5d4044, type: 3}
+    - target: {fileID: 7901536919132902101, guid: 0b3c676be4c538044bfea8aaa133257e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 8962899030378692000, guid: 0b3c676be4c538044bfea8aaa133257e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -255,6 +263,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d1b3cc5751f113146b7d01d700c186df, type: 3}
       propertyPath: m_Layer
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d1b3cc5751f113146b7d01d700c186df, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d1b3cc5751f113146b7d01d700c186df, type: 3}
       propertyPath: m_LocalScale.x

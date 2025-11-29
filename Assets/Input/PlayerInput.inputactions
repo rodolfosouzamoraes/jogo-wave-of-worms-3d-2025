@@ -287,7 +287,7 @@
                 {
                     "name": "",
                     "id": "740c3b46-40a1-406d-bda8-5fdcb02b73fe",
-                    "path": "<XInputController>/buttonSouth",
+                    "path": "<XInputController>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -309,7 +309,7 @@
                 {
                     "name": "",
                     "id": "6ee007ce-f45a-47ab-a9ec-66f5e7864ea3",
-                    "path": "<XInputController>/buttonWest",
+                    "path": "<XInputController>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -364,7 +364,7 @@
                 {
                     "name": "",
                     "id": "7bac776f-d4c8-47ba-8f6c-0655ef573a52",
-                    "path": "<XInputController>/buttonNorth",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -418,8 +418,30 @@
                 },
                 {
                     "name": "",
+                    "id": "9f112cbb-a8fe-41ac-8876-12603e67877a",
+                    "path": "<XInputController>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2797f5dc-e371-4e9e-93c7-7d68a656f392",
                     "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bb19da81-e274-4847-9ab7-48767739188b",
+                    "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -440,8 +462,30 @@
                 },
                 {
                     "name": "",
+                    "id": "191b4437-81fd-492c-8954-198e089887cf",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "362850d4-e231-4ee6-85a8-672efac4377b",
                     "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UpCode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e189eb4c-b178-40fb-8fe6-0f0d6f84573d",
+                    "path": "<XInputController>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -462,8 +506,30 @@
                 },
                 {
                     "name": "",
+                    "id": "2203771b-2172-4195-9f51-e961e4d7d9f0",
+                    "path": "<XInputController>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DownCode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d6a85597-be51-49ee-a1f0-c50d9ad21ac8",
                     "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftCode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91e9e977-9d58-413e-9272-a8c9b461cc3f",
+                    "path": "<XInputController>/dpad/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -484,8 +550,30 @@
                 },
                 {
                     "name": "",
+                    "id": "3fbf285b-08ef-4ad3-a8d0-35ed5f94c088",
+                    "path": "<XInputController>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightCode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "db0019f0-77d3-4d25-9b74-c5e06f2cd114",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitCar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "60a46b23-fe63-4c75-b990-4d96a684af23",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
