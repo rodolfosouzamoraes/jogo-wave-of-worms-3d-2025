@@ -4,6 +4,7 @@ public class PlayerDamage : MonoBehaviour
 {
     [SerializeField] float life;
     [SerializeField] GameObject backpack;
+    [SerializeField] GameObject cyllinder;
     [SerializeField] Renderer backpackRender;
     [SerializeField] float emissiveIntensity = 8f;
     [SerializeField] GameObject body;
@@ -64,6 +65,7 @@ public class PlayerDamage : MonoBehaviour
     public void ActiveBackpack()
     {
         backpack.SetActive(true);
+        cyllinder.SetActive(true);
     }
 
     private void UpdateBackpackColor()
